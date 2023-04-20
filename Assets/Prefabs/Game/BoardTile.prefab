@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_oddColor: {r: 1, g: 1, b: 1, a: 1}
   m_evenColor: {r: 0.75686276, g: 0.63529414, b: 0.41960785, a: 1}
+  m_startEndColor: {r: 1, g: 0, b: 0, a: 1}
   m_tileSprite: {fileID: 4193411762881892338}
   m_tileValue: {fileID: 2717067342588764446}
 --- !u!1 &6211650044802144418
