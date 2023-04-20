@@ -125,6 +125,7 @@ namespace SnakeAndLadder
 
         IEnumerator ShowPlayerWinInfo(int playerId)
         {
+            ShowOrHidePlayer(false);
             m_gameUICanvas.sortingOrder = 1;
             m_winnerInfo.text = string.Format("{0} WINS", GetPlayerColorFor(playerId)).ToUpper();
             m_winnerInfoHolder.SetActive(true);
@@ -132,14 +133,23 @@ namespace SnakeAndLadder
             yield return new WaitForSeconds(3.0f);
             m_winnerInfoHolder.SetActive(false);
             m_gameUICanvas.sortingOrder = 0;
+            ShowOrHidePlayer(true);
 
             ShowGameOverInfo();
         }
 
+        void ShowOrHidePlayer(bool shouldShow)
+        {
+            foreach(Player ply in GamePlayers)
+            {
+                ply.gameObject.SetActive(shouldShow);
+            }
+        }
         void ShowGameOverInfo()
         {
             if (IsGameComplete())
             {
+                ShowOrHidePlayer(false);
                 m_gameUICanvas.sortingOrder = 1;
                 m_gameOverInfoHolder.SetActive(true);
             }
