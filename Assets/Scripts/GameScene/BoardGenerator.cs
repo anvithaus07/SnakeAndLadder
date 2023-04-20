@@ -64,7 +64,7 @@ namespace SnakeAndLadder
         {
             var spawnedTile = Instantiate(m_boardTile, new Vector3(xPos, yPos), Quaternion.identity);
             mCellCount++;
-            spawnedTile.InitializeTile(mCellCount, xPos, yPos);
+            spawnedTile.InitializeTile(mCellCount);
             spawnedTile.transform.SetParent(m_boardTileHolder);
             mBoardTiles.Add(new Tile() { TileNum = mCellCount, TileXCordinate = xPos, TileYCordinate = yPos, TileTransformPos = spawnedTile.transform.position });
         }
